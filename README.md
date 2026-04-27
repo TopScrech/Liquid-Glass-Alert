@@ -7,7 +7,7 @@ A SwiftUI package for showing Liquid Glass toast alerts
 Add this package in Xcode, then import the library module
 
 ```swift
-import LiquidGlassAlert
+import LGAlert
 ```
 
 ## Usage
@@ -16,7 +16,7 @@ Wrap the root view that should be able to present toasts
 
 ```swift
 import SwiftUI
-import LiquidGlassAlert
+import LGAlert
 
 struct ContentView: View {
 	var body: some View {

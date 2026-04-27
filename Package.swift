@@ -8,14 +8,14 @@ let package = Package(
         .iOS(.v26),
         .visionOS(.v26)
     ],
-    products: [
-        .library(
-            name: "LiquidGlassAlert",
-            targets: ["LiquidGlassAlert"]
-        )
-    ],
-    targets: [
-        .target(name: "LiquidGlassAlert")
-    ],
+	products: [
+		.library(
+			name: "LGAlert",
+			targets: ["LGAlert"]
+		)
+	],
+	targets: [
+		.target(name: "LGAlert")
+	],
     swiftLanguageModes: [.v6]
 )
