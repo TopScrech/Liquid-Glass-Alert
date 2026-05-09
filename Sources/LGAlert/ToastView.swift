@@ -20,11 +20,11 @@ struct ToastView: View {
             Spacer(minLength: 0)
             
             if let actionTitle = toast.actionTitle, let action = toast.action {
-                Button(actionTitle, action: {
+                Button(actionTitle) {
                     if action() {
                         dismiss()
                     }
-                })
+                }
                 .foregroundStyle(toast.actionTint)
                 .transition(.identity)
             }
