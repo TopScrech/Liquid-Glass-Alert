@@ -14,12 +14,21 @@ public struct ToastRootView<Content: View>: View {
         content
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .overlay(alignment: .bottom) {
+#if os(visionOS)
+                ZStack {
+                    if let activeToast {
+                        ToastView(toast: activeToast, dismiss: dismiss)
+                    }
+                }
+                .opacity(activeToast == nil ? 0 : 1)
+#else
                 GlassEffectContainer(spacing: ToastMetrics.glassSpacing) {
                     if let activeToast {
                         ToastView(toast: activeToast, dismiss: dismiss)
                     }
                 }
                 .opacity(activeToast == nil ? 0 : 1)
+#endif
             }
             .environment(\.showToast, show)
             .environment(\.dismissToast, dismiss)

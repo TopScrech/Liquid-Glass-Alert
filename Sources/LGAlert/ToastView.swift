@@ -33,7 +33,7 @@ struct ToastView: View {
         .frame(height: ToastMetrics.height)
         .clipShape(.capsule)
         .contentShape(.capsule)
-        .glassEffect(.regular, in: .capsule)
+        .toastGlassEffect()
         .padding(.horizontal, ToastMetrics.edgePadding)
         .offset(y: toast.placementOffset)
         .gesture(
