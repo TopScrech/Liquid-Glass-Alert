@@ -2,7 +2,11 @@
 
 A SwiftUI package for showing Liquid Glass toast alerts
 
-## Install
+## Supported platforms
+- iOS / iPadOS 26+
+- visionOS 26+
+
+## Installation
 
 Add this package in Xcode, then import the library module
 

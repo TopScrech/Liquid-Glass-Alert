@@ -1,4 +1,4 @@
-// swift-tools-version: 6.3
+// swift-tools-version: 6.3.2
 
 import PackageDescription
 
@@ -9,10 +9,7 @@ let package = Package(
         .visionOS(.v26)
     ],
 	products: [
-		.library(
-			name: "LGAlert",
-			targets: ["LGAlert"]
-		)
+		.library(name: "LGAlert", targets: ["LGAlert"])
 	],
 	targets: [
 		.target(name: "LGAlert")
