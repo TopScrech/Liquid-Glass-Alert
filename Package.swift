@@ -13,6 +13,5 @@ let package = Package(
 	],
 	targets: [
 		.target(name: "LGAlert")
-	],
-    swiftLanguageModes: [.v6]
+	]
 )
