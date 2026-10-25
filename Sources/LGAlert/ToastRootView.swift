@@ -8,12 +8,13 @@ public struct ToastRootView<Content: View>: View {
     }
     
     @State private var activeToast: Toast?
+    @State private var placement: ToastPlacement = .bottom
     @State private var toastDismissTask: Task<Void, Never>?
     
     public var body: some View {
         content
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .overlay(alignment: .bottom) {
+            .overlay(alignment: placement.alignment) {
 #if os(visionOS)
                 ZStack {
                     if let activeToast {
@@ -41,6 +42,7 @@ public struct ToastRootView<Content: View>: View {
             }
         } completion: {
             toastDismissTask?.cancel()
+            placement = toast.placement
             
             withAnimation(animation) {
                 activeToast = toast

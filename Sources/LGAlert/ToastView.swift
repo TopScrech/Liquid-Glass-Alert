@@ -39,11 +39,11 @@ struct ToastView: View {
         .gesture(
             DragGesture()
                 .onEnded {
-                    if $0.translation.height > ToastMetrics.dismissTranslation {
+                    if $0.translation.height * toast.placement.direction > ToastMetrics.dismissTranslation {
                         dismiss()
                     }
                 }
         )
-        .transition(.offset(y: toast.transitionOffset))
+        .transition(.offset(y: toast.transitionOffset * toast.placement.direction))
     }
 }

@@ -58,3 +58,20 @@ struct ForYouView: View {
 	}
 }
 ```
+
+Display an alert at the top with `placement: .top`
+
+```swift
+showToast(.init(
+    title: "Saved",
+    placement: .top,
+    symbol: "checkmark"
+))
+```
+
+Placement defaults to `.bottom` and controls the slide transition and swipe-to-dismiss direction
+Top alerts dismiss with an upward swipe, and bottom alerts dismiss with a downward swipe
+
+When omitted, `placementOffset` defaults to `60` for top alerts and `-60` for bottom alerts
+Custom placement offsets use vertical coordinates, with positive values moving down and negative values moving up
+The `transitionOffset` defaults to `100` and is applied toward the selected edge

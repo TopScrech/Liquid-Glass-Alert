@@ -4,6 +4,7 @@ public struct Toast: Identifiable {
     public let id: UUID
     public var title: String
     public var duration: TimeInterval
+    public var placement: ToastPlacement
     public var placementOffset: CGFloat
     public var transitionOffset: CGFloat
     public var symbol: String?
@@ -15,7 +16,8 @@ public struct Toast: Identifiable {
         id: UUID = UUID(),
         title: String,
         duration: TimeInterval = 3,
-        placementOffset: CGFloat = -60,
+        placement: ToastPlacement = .bottom,
+        placementOffset: CGFloat? = nil,
         transitionOffset: CGFloat = 100,
         symbol: String? = nil,
         actionTitle: String? = nil,
@@ -25,7 +27,8 @@ public struct Toast: Identifiable {
         self.id = id
         self.title = title
         self.duration = duration
-        self.placementOffset = placementOffset
+        self.placement = placement
+        self.placementOffset = placementOffset ?? (-60 * placement.direction)
         self.transitionOffset = transitionOffset
         self.symbol = symbol
         self.actionTitle = actionTitle
